@@ -5,9 +5,7 @@
 
 - linux字库路径：/usr/share/fonts
 
-    `root@9080e45b4485:~# apt-get install  fontconfig 
-
-	root@9080e45b4485:~# fc-list`
+    `root@9080e45b4485:~# apt-get install  fontconfig   root@9080e45b4485:~# fc-list`
 
 ## 文字样本生成及增强 ##
 - 文字生成命令

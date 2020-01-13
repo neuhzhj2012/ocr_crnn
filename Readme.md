@@ -25,3 +25,8 @@
 - 训练命令，需要修改学习率为0.0001，设置区间一般为 [0.00005, 0.001]
 
     `python2 train.py --lr 0.0001 --trainroot carplate_lmdb/train/ --valroot carplate_lmdb/val/ --cuda --random_sample --workers 10 --displayInterval 500 --valInterval 500 --expr_dir newmodel --alphabet "云京冀吉宁川新晋桂沪津浙渝湘琼甘皖粤苏蒙藏豫贵赣辽鄂闽陕青鲁黑ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789"`
+- 测试程序中修改如下,CRNN第三个参数为alphabet长度加1： 
+
+    `model = crnn.CRNN(32, 1, 37, 256) -> model = crnn.CRNN(32, 1, 129, 256)`  
+
+	`model.load_state_dict(torch.load(model_path)) -> model.load_state_dict({k.replace('module.',''):v for k,v in torch.load(model_path).items()})`
